@@ -1,0 +1,18 @@
+{
+    "INPUTDIR": [
+        "/path/to/MinKnow/Output/EXPERIMENT_NAME/SAMPLE_NAME"
+    ],
+    "SAMPLE": ["CULE11_ITS1"],
+    "barcodes": [["23","24","25"]],
+    "OUTDIR": "/home/USER/NB_AmpOutput",
+    "FRAGMENT_SIZE": [300],
+    "CHOPPER_QUAL": 20,
+    "CHOPPER_LEN": null,
+    "CHOPPER_LEN_PCT": null,
+    "AMPLICON_SORTER_MIN": null,
+    "AMPLICON_SORTER_MIN_PCT": null,
+    "AMPLICON_SORTER_MAX": null,
+    "AMPLICON_SORTER_MAX_PCT": null,
+    "AMPLICON_SORTER_ALLREADS": true,
+    "THREADS": 16
+}

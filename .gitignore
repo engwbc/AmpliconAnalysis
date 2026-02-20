@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# Except these files
+!.gitignore
+!README.md
+!README.txt
+!run_amplicon.py
+!NBamplicon.sh
+!NBamplicon_config.json
