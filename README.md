@@ -1,5 +1,7 @@
 # INSTRUCTIONS
 
+A quick and dirty pipeline to split raw pooled ONT amplicon sequences into individual samples.
+
 **Before you start:** ensure that the following files are located in the same directory.
 This should be:
 
@@ -43,17 +45,17 @@ This should be:
     If there are multiple samples, make sure that each sample name is quoted and comma-separated as shown above, otherwise if there is only
     one sample type in the sample name in quotation marks and remove any commas (,)
 
-    If each sample contains multiple barcodes, then enclose the barcode ID in square brackets with quotation marks as shown above, this will create a list `["1","2","3"]`. 
+    If each sample contains multiple barcodes, then enclose the barcode ID in square brackets with quotation marks as shown above, this will create a list `["1","2","3"]`.
 
     How this works is that the IDs are grouped by their order in the list. E.g., `["1","2","3"]` will be
     read by the program as `SAMPLE1` barcodes, while `["4", "5"]` will be barcodes for `SAMPLE2`
 
-    IMPORTANT: Make sure not to remove the outer square brackets! 
+    IMPORTANT: Make sure not to remove the outer square brackets!
     E.g., `[["1"]]` for one sample and one barcode
 
     b. Setting `FRAGMENT_SIZE`
 
-    Set the expected PCR product fragment here. 
+    Set the expected PCR product fragment here.
     If there are multiple samples, make sure each value is comma-separated as shown above.
 
     c. Setting `OUTDIR`
@@ -88,10 +90,10 @@ This should be:
 
     f. `THREADS`
 
-    The amount of CPU cores - used to run processes in parallel where possible.
+    The amount of CPU cores used to run processes in parallel, where applicable.
     Higher is normally faster, but the limit for our system is 24.
     It is NOT advised to use all 24 cores if other tasks are running in the background!
-    Default is set to 16.
+    Default is `16`.
 
 3. Run the pipeline with the following command:
 
@@ -99,15 +101,19 @@ This should be:
 
 ## TROUBLESHOOTING
 
-If the terminal says it cannot find any of the files, run the following command:
+* If the terminal says it cannot find any of the files, run the following command:
 
-`cd /home/parasitology/Desktop/amplicon_analysis`
+    `cd /$HOME/Desktop/amplicon_analysis`
 
-Alternatively, you can call the script as follows:
+    Alternatively, you can call the script from any directory as follows:
 
-`python $HOME/Desktop/amplicon_analysis/run_amplicon.py --config $HOME/Desktop/amplicon_analysis/NBamplicon_config.json`
+    `python $HOME/Desktop/amplicon_analysis/run_amplicon.py --config $HOME/Desktop/amplicon_analysis/NBamplicon_config.json`
 
-You can also create your own copy of the config file - just make sure to set it to the right one!
-E.g.,
+    You can also create your own copy of the config file - just make sure to set it to the right one!
+    E.g.,
 
-`python $HOME/Desktop/amplicon_analysis/run_amplicon.py --config /path/to/another/config.json`
+    `python $HOME/Desktop/amplicon_analysis/run_amplicon.py --config /path/to/another/config.json`
+
+* If you have problems initialising Python, make sure the base conda environment is activated:
+
+    `conda activate`
